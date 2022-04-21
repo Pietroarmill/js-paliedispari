@@ -51,13 +51,19 @@
 // } while ( userWord !== palindroma );
 
 
-const userWord = prompt("Dimmi una parola")
-let reverseWord;
+const userWord = prompt("Dimmi una parola");
+const palindromaWord = palindromaCheck(userWord);
 
-do {
-    userWord = prompt("Dimmi una parola")
-    console.log(userWord);
 
+
+
+    
+// // FUNCTION
+
+function palindromaCheck(userWord) {
+
+    let reverseWord;
+    
     let userSplitWord = userWord.split("");
     console.log(userSplitWord);
 
@@ -67,14 +73,13 @@ do {
     reverseWord = userSplitWordReverse.join("");
     console.log(reverseWord);
 
-    if (reverseWord === userWord) {
-        alert("La parola da te inserita E' polindroma")
-    }   else {
-        alert("La parola da te inserita NON E' polindroma")   
-    }
-    
-} while ( userWord !== reverseWord );
+    let result;
 
-function palindromaCheck() {
-    
+    if (reverseWord === userWord) {
+        result = alert("La parola da te inserita E' polindroma");
+    }   else {
+        result = alert("La parola da te inserita NON E' polindroma");
+    }
+
+    return result;
 }
