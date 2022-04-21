@@ -7,25 +7,44 @@
 
 const userChoice = prompt("Pari o dispari?");
 const userChoiceLowerCase = userChoice.toLowerCase();
-console.log(userChoice);
 let sum;
+const numberPc = randomNumber(5, 1);
 let userNumber;
+let result;
 
-// Function
-let numberPc = randomNumber(5, 1);
-let evenOrOddCheck = evenOrOdd();
 
-if (userChoice === "pari" || userChoice === "dispari" ) {
+if ( userChoice === "pari" || userChoice === "dispari" ) 
+{
     userNumber = parseInt(prompt("Dimmi un numero da 1 a 5"));
     if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
         alert("Inserisci un numero da 1 a 5");
-    }  
+    }   else {
+        
+        sum = userNumber + numberPc;
+
+        console.log("pc",numberPc);
+        console.log("somma", sum);
+        
+        if (sum % 2 === 1) {
+            result = "dispari";
+        }   else {
+            result = "pari";
+        }
+        console.log("risultato", result);
+        
+        if (result === userChoice) {
+            alert("HAI VINTO!!")
+        }   else {
+            alert("HAI PERSO!!")
+        }
+    }
     console.log(userNumber);
-    
-    
+
 }   else {
     alert("inserisci 'pari o 'dispari'.");
 }
+
+
 
 
 
@@ -38,28 +57,3 @@ function randomNumber(max, min) {
     return pcRandomNumber;
 
 }
-console.log("pc",numberPc);
-
-function evenOrOdd() {
-
-    let result;
-
-    if ( (userNumber + numberPc) % 2 == 1 ) {
-        result = "dispari";
-    }   else if ( (userNumber + numberPc) % 2 == 0 ) {
-        result = "pari";
-    }
-    console.log(userNumber);
-
-    return result;
-}
-console.log("somma",sum);
-if (evenOrOddCheck === userChoice) {
-    alert("HAI VINTO!!")
-}   else {
-    alert("HAI PERSO!!")
-}
-
-
-console.log("risultato",evenOrOddCheck);
-
