@@ -51,12 +51,12 @@
 // } while ( userWord !== palindroma );
 
 
+
+
+
+
 const userWord = prompt("Dimmi una parola");
 const palindromaWord = palindromaCheck(userWord);
-
-
-
-
     
 // // FUNCTION
 
